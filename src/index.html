@@ -4,13 +4,14 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <title>Tastebite</title>
   </head>
   <body>
     <header>
-      <h1 id="logo">Tastebite</h1>
       <nav id="menu">
-        <ul>
+        <ul class="nav-items">
+          <li><a href="#"><img class="food-logo" src="./img/global_minbar.png" alt="restaurant logo"></a></li>
           <li><a href="#">Homepage</a></li>
           <li><a href="#">Recipes</a></li>
           <li><a href="#">About</a></li>
@@ -19,6 +20,7 @@
     </header>
     <section id="cards"></section>
     <div id="popup"></div>
-    <script type="module" src="main.bundle.js"></script>
+    <script type="module" src="index.js" defer></script>
+    <footer class="footer">Created by Mocriverse under CC license</footer>
   </body>
 </html>
