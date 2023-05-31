@@ -2,9 +2,14 @@
   "name": "group-capstone-1",
   "version": "1.0.0",
   "description": "Microverse Module 2 Group Capstone Project 🚀",
-  "main": "MicroverseSetup.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "start": "webpack serve --open",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom"
   },
   "keywords": [],
   "author": "",
