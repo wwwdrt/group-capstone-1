@@ -30,11 +30,11 @@ class Recipes {
           <img class="chicken-image" src="${meal.image}" alt="">
           <ul class="name-and-like">
             <li class="dish-name">${meal.name}</li>
-            <li class="material-icons like-icon">favorite</li>
+            <li class="material-icons like-icon" id="${meal.id}">favorite</li>
           </ul>
           <div class='like-section'>
             <p>likes</p>
-            <input type="text" value="0" class='like-number' id=''>
+            <input type="text" value="0" class='like-number' id="counts-${meal.id}">
           </div>
           <div class="comments-and-reservations">
             <a href="#"><button type="submit" class="btn-comments">Comments</button></a>
