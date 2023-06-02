@@ -14,22 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/drt-ali/likes';
-const likeArray = document.querySelectorAll('.like-icon');
 
-likeArray.forEach((element) => {
-  element.addEventListener('click', async (event) => {
-    const getLikeId = event.target.id;
-    const getLikeCount = document.getElementsByClassName(`count-${getLikeId}`);
-    getLikeCount.value = parseInt(getLikeCount.value, 10) + 1;
-    const likeObject = { item: `${getLikeId}-item`, likes: getLikeCount.value };
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(likeObject),
-    };
-    await fetch(likesUrl, options)
-      .then((response) => response.json());
-  });
-});
+window.likeFunction = (mealId) => {
+  const getLikeCount = document.getElementById(`counts-${mealId}`);
+  getLikeCount.value = parseInt(getLikeCount.value, 10) + 1;
+  const likeObject = { item: `${mealId}-item`, likes: getLikeCount.value };
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(likeObject),
+  };
+  fetch(likesUrl, options)
+    .then((response) => response.json());
+};

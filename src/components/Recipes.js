@@ -30,7 +30,7 @@ class Recipes {
           <img class="chicken-image" src="${meal.image}" alt="">
           <ul class="name-and-like">
             <li class="dish-name">${meal.name}</li>
-            <li class="material-icons like-icon" id="${meal.id}">favorite</li>
+            <li class="material-icons like-icon" id="${meal.id}" onclick="likeFunction(${meal.id})">favorite</li>
           </ul>
           <div class='like-section'>
             <p>likes</p>
