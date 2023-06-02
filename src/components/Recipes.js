@@ -32,7 +32,10 @@ class Recipes {
             <li class="dish-name">${meal.name}</li>
             <li class="material-icons like-icon">favorite</li>
           </ul>
-          <p>2 likes</p>
+          <div class='like-section'>
+            <p>likes</p>
+            <input type="text" value="0" class='like-number' id=''>
+          </div>
           <div class="comments-and-reservations">
             <a href="#"><button type="submit" class="btn-comments">Comments</button></a>
             <a href="#"><button type="submit" class="btn-reservations">Reservations</button></a>

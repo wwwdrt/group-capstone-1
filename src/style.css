@@ -266,3 +266,16 @@ button[type=submit] {
 .btn-comment:hover {
   box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
 }
+
+.like-number {
+  width: 20px;
+  border: none;
+  margin-top: 6px;
+}
+
+.like-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
