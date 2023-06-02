@@ -18,7 +18,7 @@ const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capston
 window.likeFunction = (mealId) => {
   const getLikeCount = document.getElementById(`counts-${mealId}`);
   getLikeCount.value = parseInt(getLikeCount.value, 10) + 1;
-  const likeObject = { item: `${mealId}-item`, likes: getLikeCount.value };
+  const likeObject = { item_id: `${mealId}-item`, likes: parseInt(getLikeCount.value, 10) };
   const options = {
     method: 'POST',
     headers: {
@@ -28,4 +28,7 @@ window.likeFunction = (mealId) => {
   };
   fetch(likesUrl, options)
     .then((response) => response.json());
+  // .then((responseData) => {
+  //   console.log(responseData);
+  // });
 };
