@@ -1,4 +1,3 @@
-/* eslint-disable */
 class Recipes {
   constructor() {
     this.render = document.getElementById('cards');
