@@ -25,7 +25,7 @@ class Recipes {
       const card = document.createElement('div');
       card.classList.add('dish-element');
       card.dataset.id = meal.id;
-      likeFunction(meal.id)
+      window.likeFunction(meal.id);
       card.innerHTML = `
           <img class="chicken-image" src="${meal.image}" alt="">
           <ul class="name-and-like">

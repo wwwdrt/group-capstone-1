@@ -15,28 +15,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/MgbGOFTaDhTVdgSX8BJW/likes';
 
+window.getLikesCount = async (likeId) => {
+  await fetch(likesUrl).then((response) => response.json())
+    .then((responseData) => {
+      responseData.forEach((element) => {
+        if (element.item_id === likeId) {
+          const getLikeCount = document.getElementById(`counts-${likeId}`);
+          getLikeCount.value = element.likes;
+        }
+      });
+    });
+};
 
 window.likeFunction = async (mealId) => {
-  const likeObject = { "item_id": `${mealId}`};
-  console.log(likeObject)
+  const likeObject = { item_id: `${mealId}` };
   const options = {
     method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(likeObject)
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(likeObject),
   };
-  await fetch(likesUrl, options)
-  getLikesCount(`${mealId}`)
+  await fetch(likesUrl, options);
+  window.getLikesCount(`${mealId}`);
 };
-
-window.getLikesCount = (likeId) => {
-  fetch(likesUrl).then((response) => response.json())
-  .then((responseData) => { 
-  responseData.forEach(element => {
-    if (element.item_id === likeId ) {
-        const getLikeCount = document.getElementById(`counts-${likeId}`);
-        getLikeCount.value = element.likes;
-      console.log(element.likes)
-    }
-  }); console.log(responseData)})
-};
-
