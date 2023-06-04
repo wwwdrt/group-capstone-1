@@ -5,4 +5,3 @@ const countComments = () => {
 };
 
 export default countComments;
-

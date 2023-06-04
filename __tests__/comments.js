@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/extensions
 import countComments from '../src/components/Counters';
 
 describe('countComments', () => {
@@ -46,4 +47,3 @@ describe('countComments', () => {
     expect(result).toBe(3);
   });
 });
-

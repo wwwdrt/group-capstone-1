@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/extensions
 import { postComments, getComments } from './Comments';
+// eslint-disable-next-line import/extensions
 import countComments from './Counters';
 
 const displayPopup = async (recipeId) => {
@@ -54,6 +56,7 @@ const displayPopup = async (recipeId) => {
           const commentCount = await countComments();
           commentsCounter.textContent = `Comments (${commentCount})`;
         } catch (error) {
+          // eslint-disable-next-line no-console
           console.error('Error posting comment:', error);
         }
       });
@@ -63,9 +66,9 @@ const displayPopup = async (recipeId) => {
       commentsCounter.textContent = `Comments (${commentCount})`;
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error retrieving recipe:', error);
   }
 };
 
 export default displayPopup;
-

@@ -24,7 +24,7 @@ const displayCards = async () => {
     card.dataset.id = meal.id;
     window.likeFunction(meal.id);
 
-      card.innerHTML = `
+    card.innerHTML = `
           <img class="chicken-image" src="${meal.image}" alt="">
           <ul class="name-and-like">
             <li class="dish-name">${meal.name}</li>
@@ -44,5 +44,4 @@ const displayCards = async () => {
   });
 };
 
-export { fetchRecipes,  displayCards };
-
+export { fetchRecipes, displayCards };

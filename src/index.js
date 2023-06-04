@@ -1,5 +1,7 @@
 import './style.css';
+// eslint-disable-next-line import/extensions
 import { displayCards, fetchRecipes } from './components/Recipes';
+// eslint-disable-next-line import/extensions
 import displayPopup from './components/Popup';
 
 document.addEventListener('DOMContentLoaded', () => {

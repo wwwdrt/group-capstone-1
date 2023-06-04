@@ -7,8 +7,8 @@ const postComments = async (itemId, username, comment) => {
       method: 'POST',
       body: JSON.stringify({
         item_id: itemId,
-        username: username,
-        comment: comment,
+        username,
+        comment,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -19,6 +19,7 @@ const postComments = async (itemId, username, comment) => {
       throw new Error('Failed to post comment');
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error posting comment:', error);
     throw error;
   }
@@ -48,10 +49,10 @@ const getComments = async (itemId) => {
       throw new Error(`Failed to get comments. Response status: ${res.status}`);
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error getting comments:', error);
     throw error;
   }
 };
 
 export { postComments, getComments };
-
