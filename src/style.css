@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer {
+  font-family: 'Kaushan Script', cursive, sans-serif;
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+}
+
+#menu {
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 97;
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+#logo {
+  font-family: 'Kaushan Script', cursive, sans-serif;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav-items {
+  display: flex;
+  gap: 30%;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.food-logo {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.chicken-image {
+  width: 18rem;
+  border-radius: 6px;
+}
+
+#cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 7rem 0 3rem;
+}
+
+.dish-name {
+  margin-top: 10px;
+}
+
+.name-and-like {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.like-icon {
+  fill: #f00;
+  padding-top: 10px;
+  transform: scale(0.8);
+  cursor: pointer;
+}
+
+.btn {
+  padding: 3px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.comments-and-reservations {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+p {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.chicken-image:hover {
+  transform: scale(0.99);
+  transition: transform 0.3s;
+}
+
+button[type=submit] {
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+}
+
+.dish-element {
+  padding: 1rem;
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dish-element:hover {
+  transform: scale(0.95);
+  transition: transform 0.6s;
+}
+
+.like-icon:hover {
+  transform: scale(1.05);
+  transition: transform 0.6s;
+  color: #cd1818;
+  cursor: pointer;
+}
+
+.btn-comments {
+  background: #a0d8b3;
+}
+
+.btn-comments:hover {
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.4);
+  font-family: 'Kaushan Script', cursive, sans-serif;
+  font-size: 1rem;
+  transform: scale(0.95);
+  transition: transform 0.6s;
+}
+
+.btn-reservations {
+  background: #f7d060;
+}
+
+.btn-reservations:hover {
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.4);
+  font-family: 'Kaushan Script', cursive, sans-serif;
+  font-size: 1rem;
+  transform: scale(0.95);
+  transition: transform 0.6s;
+}
+
+.dish-name:hover {
+  font-family: 'Kaushan Script', cursive, sans-serif;
+  font-size: 1.5rem;
+  transform: scale(1.05);
+  transition: transform 0.6s;
+}
+
+#popup-bg {
+  position: fixed;
+  background: linear-gradient(to right top, rgba(160, 216, 179, 0.5), rgba(247, 208, 96, 0.5));
+  backdrop-filter: blur(6px);
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  text-align: start;
+  top: 0;
+  z-index: 9999;
+  left: 0;
+  padding: 2rem;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+}
+
+#popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  background: white;
+  width: 80%;
+  border-radius: 1rem;
+  margin: auto;
+}
+
+.dish-element-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chicken-image-popup {
+  border-radius: 6px;
+  width: 90%;
+}
+
+.dish-name-popup {
+  font-family: 'Kaushan Script', cursive, sans-serif;
+  font-size: 1.8rem;
+  padding: 1.5rem;
+}
+
+.close {
+  font-family: 'Kaushan Script', cursive, sans-serif;
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem 0.5rem;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+#comments {
+  font-size: 0.9rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#comments li {
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.09);
+  border-radius: 6px;
+}
+
+#comment {
+  margin-top: 1rem;
+  width: 90%;
+}
+
+#name,
+#message {
+  width: 100%;
+  padding: 0.5rem;
+  border-style: solid;
+  border-image: linear-gradient(to right top, rgba(160, 216, 179, 0.5), rgba(247, 208, 96, 0.5)) 1;
+  border-image-slice: 1;
+  resize: none;
+  outline: none;
+}
+
+#message {
+  margin-top: 0.5rem;
+}
+
+.btn-comment {
+  font-family: 'Kaushan Script', cursive, sans-serif;
+  margin: 0.5rem 0 1rem;
+  background: linear-gradient(to right top, rgba(160, 216, 179, 0.5), rgba(247, 208, 96, 0.5));
+}
+
+.btn-comment:hover {
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
+}
+
+.like-number {
+  width: 30px;
+  border: none;
+  margin-top: 6px;
+}
+
+.like-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.like-icon:active {
+  color: white;
+}
+
+#comments-counter {
+  align-self: flex-start;
+  padding-left: 1.2rem;
+  padding-bottom: 0.8rem;
+}
