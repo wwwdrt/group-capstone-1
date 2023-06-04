@@ -1,14 +1,17 @@
 import './style.css';
-// eslint-disable-next-line import/extensions
-import Recipes from './components/Recipes';
-// eslint-disable-next-line import/extensions
-import Popup from './components/Popup';
+import { displayCards, fetchRecipes } from './components/Recipes';
+import displayPopup from './components/Popup';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const recipes = new Recipes();
-  recipes.fetch().then(() => {
-    recipes.displayCards();
-    // eslint-disable-next-line no-new
-    new Popup();
+  fetchRecipes().then(() => {
+    displayCards();
   });
+});
+
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('btn-comments')) {
+    const dishElement = event.target.closest('.dish-element');
+    const recipeId = dishElement.dataset.id;
+    displayPopup(recipeId);
+  }
 });
