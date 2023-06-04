@@ -1,4 +1,5 @@
 import { postComments, getComments } from './Comments';
+import countComments from './Counters';
 
 const displayPopup = async (recipeId) => {
   const popupContainer = document.getElementById('popup-bg');
@@ -17,6 +18,7 @@ const displayPopup = async (recipeId) => {
             <ul class="name-and-like-popup">
               <li class="dish-name-popup">${recipe.strMeal}</li>
             </ul>
+            <p id="comments-counter">Comments (loading...)</p>
             <ul id="comments"></ul>
             <form id="comment">
               <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -38,6 +40,7 @@ const displayPopup = async (recipeId) => {
       });
 
       const form = document.getElementById('comment');
+      const commentsCounter = document.getElementById('comments-counter');
 
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -47,12 +50,17 @@ const displayPopup = async (recipeId) => {
           await postComments(recipe.idMeal, name.value, message.value);
           await getComments(recipe.idMeal);
           form.reset();
+
+          const commentCount = await countComments();
+          commentsCounter.textContent = `Comments (${commentCount})`;
         } catch (error) {
           console.error('Error posting comment:', error);
         }
       });
 
       await getComments(recipe.idMeal);
+      const commentCount = await countComments();
+      commentsCounter.textContent = `Comments (${commentCount})`;
     }
   } catch (error) {
     console.error('Error retrieving recipe:', error);
