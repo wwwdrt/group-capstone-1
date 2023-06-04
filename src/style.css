@@ -281,14 +281,8 @@ button[type=submit] {
   gap: 10px;
 }
 
-.like-icon {
-  padding-top: 10px;
-  transform: scale(0.8);
-  cursor: pointer;
-}
-
 .like-icon:active {
-    color: white;
+  color: white;
 }
 
 #comments-counter {
